@@ -1,5 +1,7 @@
 import React from 'react';
 import Days from './Days';
+import {Displydays}  from './displayDay'
+   
 // import logo from './logo.svg';
 // import './App.css';
 class App extends React.Component {
@@ -13,7 +15,6 @@ class App extends React.Component {
 
   removeDay = MyDay => {
     const { day } = this.state;
-
     this.setState({ day: day.filter(e => e !== MyDay) });
   };
 
@@ -26,6 +27,7 @@ class App extends React.Component {
           removeDay={this.removeDay}
           dayArr={this.state.day}
         />
+        < Displydays MyDays={this.state.day}/>
       </main>
     );
     // dayArr={this.state.day} removeDay={this.removeDay}
