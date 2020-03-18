@@ -1,12 +1,17 @@
-
 import React from 'react';
+import Exercises from './Exercise';
 
- export const Displydays = ({MyDays}) => {
+ const Displydays = ({ MyDays ,addExercise}) => {
   return (
     <div>
-{MyDays.map(e =>
-<section>{e}</section>)}
+      {MyDays.map(e => (
+        <>
+ <section>{e}</section>
+ <Exercises day ={e} addExercise={addExercise}/>
+ </>
+      ))}
     </div>
+  );
+};
 
-  ) 
-}
+export default Displydays;

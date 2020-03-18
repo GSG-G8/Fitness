@@ -9,9 +9,7 @@ const days = [
   'Thursday',
   'Friday',
 ];
-// ,{removeDay},{dayArr}
-// dayArr.indexOf(e.target.value)=== -1 ?
-// :removeDay(e.target.value)
+
 const Days = ({ addDay, removeDay,dayArr }) => {
   return (
     <fieldset>
