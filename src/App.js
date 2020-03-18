@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Days from './Days';
+// import logo from './logo.svg';
+// import './App.css';
+class App extends React.Component {
+  state = {
+    day: [],
+  };
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  setDay = (e, MyDay) => {
+    this.setState({ day: [...this.state.day, MyDay] });
+  };
+
+  removeDay = MyDay => {
+    const { day } = this.state;
+
+    this.setState({ day: day.filter(e => e !== MyDay) });
+  };
+
+  render() {
+    console.log(this.state.day);
+    return (
+      <main>
+        <Days
+          addDay={this.setDay}
+          removeDay={this.removeDay}
+          dayArr={this.state.day}
+        />
+      </main>
+    );
+    // dayArr={this.state.day} removeDay={this.removeDay}
+  }
 }
 
 export default App;
