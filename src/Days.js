@@ -10,7 +10,7 @@ const days = [
   'Friday',
 ];
 
-const Days = ({ addDay, removeDay,dayArr }) => {
+const Days = ({ addDay, removeDay, dayArr }) => {
   return (
     <fieldset>
       <legend>Choose the Day</legend>

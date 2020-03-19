@@ -14,34 +14,56 @@ class App extends React.Component {
       Monday: [],
       Tuseday: [],
       Wednesday: [],
-      Thursday:[],
+      Thursday: [],
     },
   };
 
   setDay = MyDay => {
-    this.setState({ day: [...this.state.day, MyDay] });
+    const { day } = this.state;
+    this.setState({ day: [...day, MyDay] });
   };
 
   removeDay = MyDay => {
     const { day } = this.state;
     this.setState({ day: day.filter(e => e !== MyDay) });
   };
-  setExe = (day,Exe) => {
-    this.setState({ exercise: {...this.state.exercise,[day]: [...this.state.exercise[day], Exe]} });
 
-  }
+  setExe = (day, Exe) => {
+    const { exercise } = this.state;
+
+    this.setState({
+      exercise: {
+        ...exercise,
+        [day]: [...exercise[day], Exe],
+      },
+    });
+  };
+
+  removeExe = (day, Exe) => {
+    const { exercise } = this.state;
+
+    this.setState({
+      exercise: {
+        ...exercise,
+        [day]: exercise[day].filter(e => e !== Exe),
+      },
+    });
+  };
+
   render() {
-    console.log(this.state.day);
-    console.log(this.state.exercise['Saturday']);
+    const { day, exercise } = this.state;
+    console.log(day);
+    console.log(exercise);
 
     return (
       <main>
-        <Days
-          addDay={this.setDay}
-          removeDay={this.removeDay}
-          dayArr={this.state.day}
+        <Days addDay={this.setDay} removeDay={this.removeDay} dayArr={day} />
+        <Displydays
+          MyDays={day}
+          addExercise={this.setExe}
+          removeExe={this.removeDay}
+          excersise={exercise}
         />
-        <Displydays MyDays={this.state.day} addExercise={this.setExe} />
       </main>
     );
   }
