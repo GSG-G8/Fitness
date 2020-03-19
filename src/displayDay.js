@@ -1,14 +1,19 @@
 import React from 'react';
 import Exercises from './Exercise';
 
- const Displydays = ({ MyDays ,addExercise}) => {
+const Displydays = ({ MyDays, addExercise, removeExe, excersise }) => {
   return (
     <div>
       {MyDays.map(e => (
-        <>
- <section>{e}</section>
- <Exercises day ={e} addExercise={addExercise}/>
- </>
+        <div key={e}>
+          <section>{e}</section>
+          <Exercises
+            day={e}
+            addExercise={addExercise}
+            removeExe={removeExe}
+            excersise={excersise}
+          />
+        </div>
       ))}
     </div>
   );
