@@ -61,7 +61,7 @@ class App extends React.Component {
         <Displydays
           MyDays={day}
           addExercise={this.setExe}
-          removeExe={this.removeDay}
+          removeExe={this.removeExe}
           excersise={exercise}
         />
       </main>
