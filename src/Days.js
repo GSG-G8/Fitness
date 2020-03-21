@@ -10,17 +10,15 @@ const days = [
   'Friday',
 ];
 
-const Days = ({ addDay, removeDay, dayArr }) => {
-  return (
+const Days = ({ addDay, removeDay, dayArr, hide }) => (
+  <div className="days" style={{ display: hide ? 'none' : 'block' }}>
     <fieldset>
       <legend>Choose the Day</legend>
       {days.map(day => (
         <div key={day}>
           <input
-            onChange={e =>
-              dayArr.indexOf(e.target.value) === -1
-                ? addDay(e.target.value, day)
-                : removeDay(e.target.value)
+            onChange={() =>
+              dayArr.indexOf(day) === -1 ? addDay(day) : removeDay(day)
             }
             type="checkbox"
             id={day}
@@ -31,7 +29,7 @@ const Days = ({ addDay, removeDay, dayArr }) => {
         </div>
       ))}
     </fieldset>
-  );
-};
+  </div>
+);
 
 export default Days;

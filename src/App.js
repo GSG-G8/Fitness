@@ -1,6 +1,7 @@
 import React from 'react';
 import Days from './Days';
 import Displydays from './displayDay';
+import DisplayExe from './displalyExe';
 // import Exercise from './Exercise';
 
 // import logo from './logo.svg';
@@ -16,6 +17,18 @@ class App extends React.Component {
       Wednesday: [],
       Thursday: [],
     },
+    show: false,
+    hide: false,
+  };
+
+  onClick = () => {
+    //  const { show } = this.state;
+    this.setState({ show: true, hide: true });
+  };
+
+  closeOnClick = () => {
+    //  const { show } = this.state;
+    this.setState({ show: false, hide: false });
   };
 
   setDay = MyDay => {
@@ -51,19 +64,40 @@ class App extends React.Component {
   };
 
   render() {
-    const { day, exercise } = this.state;
+    const { day, exercise, show, hide } = this.state;
     console.log(day);
     console.log(exercise);
 
+    // eslint-disable-next-line no-return-assign
     return (
       <main>
-        <Days addDay={this.setDay} removeDay={this.removeDay} dayArr={day} />
-        <Displydays
-          MyDays={day}
-          addExercise={this.setExe}
-          removeExe={this.removeExe}
-          excersise={exercise}
+        <input
+          type="button"
+          onClick={this.onClick}
+          value="Show Your excersise"
         />
+        <div className="display-main">
+          <Days
+            addDay={this.setDay}
+            removeDay={this.removeDay}
+            dayArr={day}
+            hide={hide}
+          />
+          <Displydays
+            MyDays={day}
+            addExercise={this.setExe}
+            removeExe={this.removeExe}
+            excersise={exercise}
+            hide={hide}
+          />
+          <DisplayExe
+            MyDays={day}
+            MyExcersise={exercise}
+            closeOnClick={this.closeOnClick}
+            show={show}
+            hide={hide}
+          />
+        </div>
       </main>
     );
   }

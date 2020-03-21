@@ -15,6 +15,7 @@ module.exports = {
     jest: true
   },
   rules: {
+    "arrow-body-style": ["error", "as-needed"],
     "react/state-in-constructor": 0,
     //  allow .js extensions for JSX.
     "react/jsx-filename-extension": [

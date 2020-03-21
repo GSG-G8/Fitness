@@ -1,3 +1,49 @@
 .Exercise-img{
   height: 200px;
 }
+.display-exe{
+  display: none;
+  margin: auto;
+  background-color: #FFEDE3;
+  box-shadow: 1px 5px 14px 2px #E0ACB4;
+  width: 450px;
+  height: 500px;
+  padding: 20px;
+  border-radius: 12px;
+  color: #287b72;
+  text-align: center;
+  
+}
+.close {
+  color: #287b72;
+  float: right;
+  font-size: 28px;
+  font-weight: 700;
+}
+.close:hover,
+.close:focus {
+  color: #916274;
+  text-decoration: none;
+  cursor: pointer;
+}
+.display-exe__h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #916274;
+}
+.dayWithExe{
+  border: 2px solid #287b72;
+  border-radius: 7px;
+  margin-bottom: 4px;
+}
+.dayWithExe__h3{
+  background-color: #287b72;
+  color: antiquewhite;
+  width: 30%;
+ margin-left:34% ;
+
+}
+ul
+{padding: 0;
+list-style: none;}
