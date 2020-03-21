@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DisplayExe = ({ MyDays, MyExcersise, show, closeOnClick }) => {
-  console.log(MyDays, 'hhhh');
+  console.log(MyExcersise[MyDays], 'hhhh');
   return (
     <div className="display-exe" style={{ display: show && 'block' }}>
       <button type="button" className="close" onClick={closeOnClick}>
