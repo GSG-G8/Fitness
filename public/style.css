@@ -1,3 +1,27 @@
+
+.choosh-day{
+
+  margin: auto;
+  background-color: #FFEDE3;
+  box-shadow: 1px 5px 14px 2px #E0ACB4;
+  width: 450px;
+  height: 500px;
+  padding: 20px;
+  border-radius: 12px;
+  color: #287b72;
+  text-align: center;
+}
+.choosh-day__day{
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+}
+.choosh-day__day button{
+  width: 50%;
+  padding: 4%;
+  margin: 2% auto;
+}
+
 .Exercise-img{
   height: 200px;
 }

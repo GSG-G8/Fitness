@@ -19,6 +19,7 @@ class App extends React.Component {
     },
     show: false,
     hide: false,
+    showdays: false,
   };
 
   onClick = () => {
@@ -29,6 +30,11 @@ class App extends React.Component {
   closeOnClick = () => {
     //  const { show } = this.state;
     this.setState({ show: false, hide: false });
+  };
+
+  onClickDay = () => {
+    const { showdays } = this.state;
+    this.setState({ showdays: !showdays });
   };
 
   setDay = MyDay => {
@@ -64,7 +70,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { day, exercise, show, hide } = this.state;
+    const { day, exercise, show, hide , showdays} = this.state;
     console.log(day);
     console.log(exercise);
 
@@ -76,12 +82,18 @@ class App extends React.Component {
           onClick={this.onClick}
           value="Show Your excersise"
         />
-        <div className="display-main">
+
+        <div
+          className="display-main"
+          style={{ display: hide ? 'none' : 'block' }}
+        >
           <Days
             addDay={this.setDay}
             removeDay={this.removeDay}
             dayArr={day}
-            hide={hide}
+            // hide={hide}
+            onClickDay={this.onClickDay}
+            showdays={showdays}
           />
           <Displydays
             MyDays={day}
@@ -90,14 +102,14 @@ class App extends React.Component {
             excersise={exercise}
             hide={hide}
           />
-          <DisplayExe
-            MyDays={day}
-            MyExcersise={exercise}
-            closeOnClick={this.closeOnClick}
-            show={show}
-            hide={hide}
-          />
         </div>
+        <DisplayExe
+          MyDays={day}
+          MyExcersise={exercise}
+          closeOnClick={this.closeOnClick}
+          show={show}
+          hide={hide}
+        />
       </main>
     );
   }
