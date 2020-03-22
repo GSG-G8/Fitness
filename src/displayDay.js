@@ -23,7 +23,7 @@ const Displydays = ({
       <div className="choosh-day__day">
         {MyDays.map(val => (
           <div key={val}>
-            <button onClick={onClickDayExe} key={val} type="button">
+            <button onClick={() => onClickDayExe(val)} key={val} type="button">
               {val}
             </button>
             <Exercises
