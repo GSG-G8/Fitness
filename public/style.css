@@ -79,7 +79,7 @@
 }
 .display-exe {
   display: none;
-  margin: auto;
+  margin: 100px auto;
   background-color: #ffede3;
   box-shadow: 1px 5px 14px 2px #e0acb4;
   width: 450px;
