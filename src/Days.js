@@ -11,10 +11,10 @@ const days = [
 ];
 
 const Days = ({ addDay, removeDay, dayArr, showdays, onClickDay }) => (
-  <div className="days">
+  <div className="days" style={{ display: showdays ? 'none' : 'block' }}>
     {/* style={{ display: hide ? 'none' : 'block' }} */}
-    <fieldset className="ff" style={{ display: showdays ? 'none' : 'block' }}>
-      <legend>Choose the Day</legend>
+    <div className="ff" >
+      <h2>Choose the Day</h2>
       {days.map(day => (
         <div key={day}>
           <input
@@ -33,7 +33,7 @@ const Days = ({ addDay, removeDay, dayArr, showdays, onClickDay }) => (
       <button type="button" onClick={onClickDay}>
         Choose Your Daily Exercise{' '}
       </button>
-    </fieldset>
+    </div>
   </div>
 );
 
