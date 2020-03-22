@@ -84,18 +84,10 @@ class App extends React.Component {
 
   render() {
     const { day, exercise, show, hide, showdays, showdayExe } = this.state;
-    console.log(day);
-    console.log(exercise);
-    console.log(this.state.exercise.Sunday, 'gg');
     // eslint-disable-next-line no-return-assign
     return (
       <main>
-        <input
-          type="button"
-          onClick={this.onClick}
-          value="Show Your excersise"
-        />
-
+       
         <div
           className="display-main"
           style={{ display: hide ? 'none' : 'block' }}
@@ -108,6 +100,11 @@ class App extends React.Component {
             onClickDay={this.onClickDay}
             showdays={showdays}
           />
+           <input className="show-exe"
+          type="button"
+          onClick={this.onClick}
+          value="Show Your excersise"
+        />
           <Displydays
             MyDays={day}
             addExercise={this.setExe}
