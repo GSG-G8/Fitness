@@ -34,19 +34,6 @@ const Days = ({ addDay, removeDay, dayArr, showdays, onClickDay }) => (
         Choose Your Daily Exercise{' '}
       </button>
     </fieldset>
-    <div
-      className="choosh-day"
-      style={{ display: showdays ? 'block' : 'none' }}
-    >
-      <button type="button" className="close" onClick={onClickDay}>
-        &times;
-      </button>
-      <div className="choosh-day__day">
-        {dayArr.map(val => (
-          <button key={val} type="button"> {val}</button>
-        ))}
-      </div>
-    </div>
   </div>
 );
 

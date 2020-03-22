@@ -2,10 +2,8 @@ import React from 'react';
 import Days from './Days';
 import Displydays from './displayDay';
 import DisplayExe from './displalyExe';
-// import Exercise from './Exercise';
+// import Exercises from './Exercise';
 
-// import logo from './logo.svg';
-// import './App.css';
 class App extends React.Component {
   state = {
     day: [],
@@ -21,6 +19,7 @@ class App extends React.Component {
     show: false,
     hide: false,
     showdays: false,
+    showdayExe: false,
   };
 
   onClick = () => {
@@ -36,6 +35,11 @@ class App extends React.Component {
   onClickDay = () => {
     const { showdays } = this.state;
     this.setState({ showdays: !showdays });
+  };
+
+  onClickDayExe = () => {
+    const { showdayExe } = this.state;
+    this.setState({ showdayExe: !showdayExe });
   };
 
   setDay = MyDay => {
@@ -70,8 +74,9 @@ class App extends React.Component {
     });
   };
 
+
   render() {
-    const { day, exercise, show, hide , showdays} = this.state;
+    const { day, exercise, show, hide, showdays, showdayExe } = this.state;
     console.log(day);
     console.log(exercise);
 
@@ -102,6 +107,10 @@ class App extends React.Component {
             removeExe={this.removeExe}
             excersise={exercise}
             hide={hide}
+            onClickDay={this.onClickDay}
+            showdays={showdays}
+            showdayExe={showdayExe}
+            onClickDayExe={this.onClickDayExe}
           />
         </div>
         <DisplayExe

@@ -1,8 +1,11 @@
 import React from 'react';
 import exercise from './data';
 
-const Exercise = ({ addExercise, day, removeExe, excersise }) => {
-  return (
+const Exercise = ({ addExercise, day, removeExe, excersise,showdayExe }) => (
+  <div
+    className="choosh-day__day__exe"
+    style={{ display: showdayExe ? 'block' : 'none' }}
+  >
     <fieldset>
       <legend>Choose the Exercise</legend>
       {exercise.map(exe => (
@@ -24,7 +27,7 @@ const Exercise = ({ addExercise, day, removeExe, excersise }) => {
         </div>
       ))}
     </fieldset>
-  );
-};
+  </div>
+);
 
 export default Exercise;
