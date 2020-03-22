@@ -12,7 +12,7 @@ const DisplayExe = ({ MyDays, MyExcersise, show, closeOnClick }) => {
       {MyDays.map(day => (
         <div className="dayWithExe" key={day}>
           <br />
-          <h3 className="dayWithExe__h3"> {MyDays}</h3>
+          <h3 className="dayWithExe__h3"> {day}</h3>
           <ul>
             {MyExcersise[day].map(exe => (
               <li key={exe.id}> {exe.name}</li>

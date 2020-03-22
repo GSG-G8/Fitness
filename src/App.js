@@ -19,7 +19,15 @@ class App extends React.Component {
     show: false,
     hide: false,
     showdays: false,
-    showdayExe: false,
+    showdayExe: {
+      Saturday: false,
+      Sunday: false,
+      Monday: false,
+      Tuseday: false,
+      Wednesday: false,
+      Thursday: false,
+      Friday: false,
+    },
   };
 
   onClick = () => {
@@ -37,9 +45,9 @@ class App extends React.Component {
     this.setState({ showdays: !showdays });
   };
 
-  onClickDayExe = () => {
+  onClickDayExe = day => {
     const { showdayExe } = this.state;
-    this.setState({ showdayExe: !showdayExe });
+    this.setState({ showdayExe: { ...showdayExe, [day]: !showdayExe[day] } });
   };
 
   setDay = MyDay => {
@@ -74,12 +82,11 @@ class App extends React.Component {
     });
   };
 
-
   render() {
     const { day, exercise, show, hide, showdays, showdayExe } = this.state;
     console.log(day);
     console.log(exercise);
-
+    console.log(this.state.exercise.Sunday, 'gg');
     // eslint-disable-next-line no-return-assign
     return (
       <main>
